@@ -30,11 +30,11 @@ module.exports = {
 		  }
 		  else if(Array.isArray(incomingArg) === true ){
 		    if(incomingArg.length === 0){
-		      return "undefined";
+		      return ;
 		    }else if(incomingArg[2]){
 		      return incomingArg[2];
 		    }else{
-		      return "undefined";
+		      return;
 		    }
 		  }
 		  else if (typeof incomingArg === 'function'){
