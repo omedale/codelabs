@@ -1,46 +1,29 @@
 module.exports = {
 
-	 dataTypes: (incomingArg)=>{
+	 words: (inputStr)=>{
 		  
-		  if (incomingArg === null){
-		    return "no value";
-		  }else if(incomingArg === undefined){
-		    return "no value";
-		  }
-		  else if(incomingArg === true){
-		    return true;
-		  }
-		  else if(incomingArg === false){
-		    return false;
-		  }
-		  else if(incomingArg == 100  &&  typeof incomingArg === "number"){
-		    return "equal to 100";
-		  }
-		  else if( incomingArg > 100 && incomingArg !== '' &&  typeof incomingArg === "number"){
-		    return "more than 100";
-		  }
-		  else if( incomingArg < 100 && incomingArg !== '' &&  typeof incomingArg === "number"){
-		    return "less than 100";
-		  }
-		  else if(isNaN(incomingArg) === true && Array.isArray(incomingArg) === false && typeof incomingArg != 'function' ){
-		    return incomingArg.length;
-		  }
-		   else if(isNaN(incomingArg) === false && Array.isArray(incomingArg) === false  && typeof incomingArg != 'function'){
-		    return incomingArg.length;
-		  }
-		  else if(Array.isArray(incomingArg) === true ){
-		    if(incomingArg.length === 0){
-		      return ;
-		    }else if(incomingArg[2]){
-		      return incomingArg[2];
-		    }else{
-		      return;
-		    }
-		  }
-		  else if (typeof incomingArg === 'function'){
-		    	return incomingArg(true);
-		  }
-		  
+		  	  let words = [];
+			  let output = {};
+			  words = inputStr.split(" "); 
+			  for (let count=0; count<words.length; count++){
+			  	if (words[count] != ""){
+			    let counter = 0;
+			    for(let kount=0; kount<words.length; kount++){
+			      if(words[count].toString() === words[kount].toString()){
+			         counter = counter + 1;
+			      }
+			      if(counter>1){
+			        retainWord = words[count];
+			      }
+			    
+			    }
+			    output[words[count]]= counter;
+			   } 
+			  }
+
+			
+			  return output;
+
 		}
 
 
