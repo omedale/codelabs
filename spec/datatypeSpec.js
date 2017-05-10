@@ -47,7 +47,7 @@ describe("Data types tests", function() {
     });
 
     it("should return the length of an empty string", function() {
-      expect(myApp.myApp.dataTypes('')).toBe(0);
+      expect(myApp.dataTypes('')).toBe(0);
     });
 
     it("should return the length of `555`", function() {
